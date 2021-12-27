@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block title %}List Network Overview Current{% endblock title %}
+
+{% block content %}
+    <div class="item">
+        <h1>Excel Network Overview Current :</h1>
+        <div class="ui right floated segment">
+            <form method="get" action="" class="ui form">
+                <label for="filter">Year:</label>
+                <select name="filter" id="id_filter">
+                    <option value=0>----</option>
+                    <option value=2020>2020</option>
+                    <option value=2021>2021</option>
+                    <option value=2022>2022</option>
+                    <option value=2023>2023</option>
+                    <option value=2024>2024</option>
+                </select> <input type="submit" name="submit" value="filter" class="ui button"ma/>
+            </form>
+        </div>
+        <div class="ui relaxed grid">
+        {% for x in Network_Overview_Current %}
+            <div class="ui middle aligned divided list">
+                <div class="item">
+                    <a class="item" href="{{x.pk}}/"><i class="folder outline icon"></i>{{x.Name}}</a>
+                    <div class="right floated content">
+                        <div class="ui buttons">
+                            <button class="ui button" onclick="location.href='{{x.NOC_fields.url}}'">Download</Button>
+                        </div>
+                        <div class="ui buttons">
+                            <button class="negative ui button" onclick="location.href='{{x.pk}}/delete/'">Delete</Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}   
+        </div>
+    </div>
+{% endblock content %}

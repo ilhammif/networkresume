@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Network Overview Current{% endblock title %}
+{% block content %}
+<h1>
+  Processing Network Overview Current
+</h1>
+  <form enctype="multipart/form-data"  method="post" class="ui form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class='ui button' value="Submit">
+
+  </form>
+
+
+{% endblock content%}

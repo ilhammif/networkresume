@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% block title %}Detail Network Overview Current{% endblock title %}
+
+{% block content %}
+    <div class="ui segment">
+        <h1>Welcome to the Network Overview Current {{Network_Overview_Current_details.Year_Week}} Detail Page</h1>
+        <h2>Network Overview Current {{Network_Overview_Current_details.Name}}:</h2>
+        <table class="ui definition table">
+            <tbody>
+                <tr>
+                    <td class="two wide column">Last Week Data</td>
+                    <td><a class="item" href={% url 'Meas:detail' pk=Network_Overview_Current_details.lw_fields.pk %}>Measurements {{Network_Overview_Current_details.lw_fields}}</a> ({{ Network_Overview_Current_details.lw_fields}})</td>
+                </tr>
+
+                <tr>
+                    <td class="two wide column">Current Week Data</td>
+                    <td><a class="item" href={% url 'Meas:detail' pk=Network_Overview_Current_details.cw_fields.pk %}>Measurements {{Network_Overview_Current_details.cw_fields}}</a> ({{ Network_Overview_Current_details.cw_fields}})</td>
+                </tr>
+
+                <tr>
+                    <td class="two wide column">Site Profile</td>
+                    <td><a class="item" href={% url 'Site_Profile:detail' pk=Network_Overview_Current_details.site_profile_fields.pk %}>{{Network_Overview_Current_details.site_profile_fields.Year_Week}}</a> ({{ Network_Overview_Current_details.site_profile_fields}})</td>
+                </tr>
+
+                <tr>
+                    <td class="two wide column">Network Overview Current</td>
+                    <td><a class="item" href={{ Network_Overview_Current_details.NOC_fields.url }}>{{Network_Overview_Current_details}}</a></td>
+                </tr>
+
+
+                <tr>
+                    <td class="two wide column">Week</td>
+                    <td>{{Network_Overview_Current_details.Week}}</td>
+                </tr>
+                
+                <tr>
+                    <td class="two wide column">Year</td>
+                    <td>{{Network_Overview_Current_details.Year}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
