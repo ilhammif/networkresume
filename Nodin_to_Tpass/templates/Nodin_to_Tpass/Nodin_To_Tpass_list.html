@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% block title %}List Nodin To Tpass{% endblock title %}
+
+{% block content %}
+
+    <div class="ui grid">
+        <div class="fourteen wide column">
+            <div class="ui segment">
+                <div class="item">
+                    <h1>Excel Nodin To Tpass :</h1>
+                    <div class="ui middle aligned divided list">
+                    {% for x in Nodin_To_Tpass %}
+                        <div class="item">
+                            <a class="item" href="{{x.pk}}/"><i class="folder outline icon"></i>{{x.Name}}</a>
+                            <div class="right floated content">
+                                <div class="ui buttons">
+                                    <button class="ui button" onclick="location.href='{{x.pk}}/update/'">Update</Button>
+                                </div>
+                                <div class="ui buttons">
+                                    <button class="negative ui button" onclick="location.href='{{x.pk}}/delete/'">Delete</Button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}   
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="two wide column">
+            <div class="ui right floated segment">
+                <form method="get" action="" class="ui form">
+                    <label for="filter">Year:</label>
+                    <select name="filter" id="id_filter">
+                        <option value=0>----</option>
+                        <option value=2020>2020</option>
+                        <option value=2021>2021</option>
+                        <option value=2022>2022</option>
+                        <option value=2023>2023</option>
+                        <option value=2024>2024</option>
+                    </select> <input type="submit" name="submit" value="filter" class="ui button"ma/>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

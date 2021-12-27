@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block title %}Detail Nodin_To_Tpass {% endblock title %}
+
+{% block content %}
+    <div class="ui segment">
+        <h1>Welcome to the Nodin_To_Tpass Detail Page</h1>
+        <table class="ui definition table">
+            <tbody>
+                <tr>
+                    
+                    <td class="two wide column">Name</td>
+                    <td>{{Nodin_To_Tpass_details.Name}}</td>
+                </tr>
+                <tr>   
+                    <td class="two wide column">Nodin</td>
+                    <td><a class="item" href={{ Nodin_To_Tpass_details.Nodin_fields.Nodin.url }}> {{Nodin_To_Tpass_details.Nodin_fields.Nodin.name}}</a></td>
+                </tr>
+                <tr>   
+                    <td class="two wide column">RNC</td>
+                    <td><a class="item" href={{ Nodin_To_Tpass_details.RNC_fields.RNC.url }}> {{Nodin_To_Tpass_details.RNC_fields.RNC.name}}</a></td>
+                </tr>
+                <tr>   
+                    <td class="two wide column">Tpass</td>
+                    <td><a class="item" href={{ Nodin_To_Tpass_details.tpass_fields.url }}> {{Nodin_To_Tpass_details.tpass_fields.name}}</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
