@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+{% block title %}Update Measurements{% endblock title %}
+
+{% block content %}
+<h1>
+  Update Measurements
+</h1>
+    <form enctype="multipart/form-data"  method="post" class="ui form">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" name="" value="Update" class='ui button'>
+    </form>
+{% endblock content %}

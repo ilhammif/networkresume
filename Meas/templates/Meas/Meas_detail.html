@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block title %}Detail Measurements {% endblock title %}
+
+{% block content %}
+    <div class="ui segment">
+        <h1>Welcome to the Meas {{Meas_details.Year_Week}} Detail Page</h1>
+        <h2>Meas Week {{Meas_details.Week}}:</h2>
+        <table class="ui definition table">
+            <tbody>
+                <tr>
+                    <td class="two wide column">Meas 2G</td>
+                    <td><a class="item" href={{ Meas_details.Meas2G.url }}>2G {{Meas_details.Year_Week}}</a> ({{ Meas_details.Meas2G}})</td>
+                </tr>
+
+                <tr>
+                    <td class="two wide column">Meas 3G</td>
+                    <td><a class="item" href={{ Meas_details.Meas3G.url }}>3G {{Meas_details.Year_Week}}</a> ({{ Meas_details.Meas3G}})</td>
+                </tr>
+
+                <tr>
+                    <td class="two wide column">Meas 4G</td>
+                    <td><a class="item" href={{ Meas_details.Meas4G.url }}>4G {{Meas_details.Year_Week}}</a> ({{ Meas_details.Meas4G}})</td>
+                </tr>
+
+                <tr>
+                    <td class="two wide column">Week</td>
+                    <td>{{Meas_details.Week}}</td>
+                </tr>
+
+                <tr>
+                    <td class="two wide column">Year</td>
+                    <td>{{Meas_details.Year}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}
