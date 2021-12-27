@@ -1,0 +1,34 @@
+.mymodal {
+    height: 400px !important;
+    top: 200px !important;
+    font-size: 20px !important;
+}
+
+ul li {
+    margin: 0 0 10px 0;
+}
+
+.ui.button {
+    max-width: 100px;
+    min-width: 20px;
+    border-radius: 10px !important;
+    padding-left:10px;
+    padding-right:10px;
+
+}
+
+.block-center {
+    text-align: center !important;
+}
+
+.field-with {
+    width: 100%;
+}
+
+.mtop {
+    margin-top: 10px !important;
+}
+
+.ui.right.floated.segment {
+    width : 200px;
+}
